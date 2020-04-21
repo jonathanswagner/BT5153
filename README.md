@@ -45,3 +45,10 @@ Following classifiers were trained and tuned with their respective parameters:
 
 The random guess model is a random binomial distribution with the probability distribution obtained from the training data. Roughly 30% of the training data outcomes is a 1, hence this is the probability used for the random classifier as well.
 
+The final model selection was not based on any model result such as accuracy, f1-score or precision but rather the direct applicaton on the business use case
+
+The business use case is to maximize ad returns as much as possible which means, false positives for class 1 need to be minimized and true positives maximized as much as possible. The model that is able to do so, will generate the highest profit in excess of the random guess model.
+
+From the results of cost_function() it can be seen that the second version of the LGBMClassifier was able to generate the highest excess profit using a classification threshold of 0.45. The excess profit on the training dataset is 5.82% per ad slot while the excess profit accounts to 2.88% on the test set previously created.
+
+With an average cost of one ad slot of US$70.000, this accounts for roughly US$2.100 per ad slot that the company could be generating in additional profit and therefore increase the advertisement ROI above 0%
